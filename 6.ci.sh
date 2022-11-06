@@ -14,8 +14,8 @@ df -h
 free -m
 
 pacman -Syyu --noconfirm
-
-makepkg --ignorearch --clean --cleanbuild --force --skippgpcheck --noconfirm --syncdeps
+chmod 700 -R .
+sudo -u runner makepkg --ignorearch --clean --cleanbuild --force --skippgpcheck --noconfirm --syncdeps
 mkdir -p x86_64
 mv *.zst x86_64
 ./5.sf.upload.sh
