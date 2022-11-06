@@ -14,7 +14,7 @@ df -h
 free -m
 
 pacman -Syyu --noconfirm
-chmod 700 -R ./
+chmod -R 777 ./
 sudo -u runner makepkg --ignorearch --clean --cleanbuild --force --skippgpcheck --noconfirm --syncdeps
 mkdir -p x86_64
 mv *.zst x86_64
