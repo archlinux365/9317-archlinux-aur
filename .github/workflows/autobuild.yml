@@ -19,6 +19,8 @@ jobs:
 
     steps:
       - name: Install SSH Key
+        env:
+          HOME: /home/runner
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.MY_SF_SSH }} 
