@@ -19,7 +19,7 @@ cat /root/.ssh/known_hosts
 
 mkdir -p /root/git
 cd /root/git
-git clone https://github.com/archlinux/aur.git 9317-archlinux-aur
+git clone --depth=1 https://github.com/archlinux/aur.git 9317-archlinux-aur
 
 cd /root/git/9317-archlinux-aur
 git remote -v
@@ -28,11 +28,7 @@ git remote set-url origin git@github.com:archlinux/aur.git
 
 
 
-git fetch origin 
-git fetch origin 
-git fetch origin 
-git fetch origin 
-
+git fetch -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin 
 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
