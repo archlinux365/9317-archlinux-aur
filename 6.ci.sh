@@ -38,15 +38,18 @@ git config --global user.name "gnuhub"
 for pkg in `ls`
 do 
     echo $pkg
-    cd /root/git/9317-archlinux-aur/
+    if [ "$pKG" != "HEAD" ];then
+    
+        cd /root/git/9317-archlinux-aur/
     
    
-    git checkout $pkg 
-    git push origin :$pkg
-    rsync -avP $CMD_PATH/t/ /root/git/9317-archlinux-aur/
-    git add .
-    git commit -a -m ""add ci template""
-    git push origin $pkg
-  
-    cd /root/git/9317-archlinux-aur/.git/refs/remotes/origin
+        git checkout $pkg 
+        git push origin :$pkg
+        rsync -avP $CMD_PATH/t/ /root/git/9317-archlinux-aur/
+        git add .
+        git commit -a -m ""add ci template""
+        git push origin $pkg
+    
+        cd /root/git/9317-archlinux-aur/.git/refs/remotes/origin
+    fi
 done
