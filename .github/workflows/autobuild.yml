@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload to sf
         id: uploadiso
-        run: echo "::set-output name=url::Please Download ISO From SourceForge https://sourceforge.net/projects/archlinux365/files/9317-archlinux-aur/x86_64/"
+        run: echo "::set-output name=url::Please Download pkg From SourceForge https://sourceforge.net/projects/archlinux365/files/9317-archlinux-aur/x86_64/"
 
       - name: Create release
         uses: softprops/action-gh-release@v1
