@@ -26,9 +26,8 @@ git remote -v
 git remote add origin  git@github.com:archlinux/aur.git
 git remote set-url origin git@github.com:archlinux/aur.git
 
+git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin 
 
-
-git fetch -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin 
 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
