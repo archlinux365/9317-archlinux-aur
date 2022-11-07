@@ -38,7 +38,7 @@ git config --global user.name "gnuhub"
 for pkg in `ls`
 do 
     echo $pkg
-    if [ "$pKG" != "HEAD" ];then
+    if [ "$pkg" != "HEAD" ];then
     
         cd /root/git/9317-archlinux-aur/
     
