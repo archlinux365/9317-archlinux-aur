@@ -14,7 +14,7 @@ ssh-keyscan "frs.sourceforge.net" >> /root/.ssh/known_hosts
 
 
 ssh-keygen -f "/root/.ssh/known_hosts" -R "github.com"
-ssh-keyscan "github.com" >> ~/.ssh/known_hosts
+ssh-keyscan "github.com" >> /root/.ssh/known_hosts
 cat /root/.ssh/known_hosts
 
 mkdir -p /root/git
