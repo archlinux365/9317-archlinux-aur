@@ -1,0 +1,29 @@
+name: Build PKGBUILD
+
+on:
+  push:
+    branches:
+      - '*'
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/archlinux365/9318-archlinux-docker/root:latest
+      volumes:
+        - /home/runner/work/alterdir/alterdir:/tmp/alterdir
+      options: "--privileged"
+
+    steps:
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.MY_SF_SSH }} 
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+      - uses: actions/checkout@v2
+      - name: build
+        run: ./6.ci.sh
+
