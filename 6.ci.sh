@@ -23,6 +23,9 @@ git clone https://github.com/archlinux/aur.git 9317-archlinux-aur
 
 cd /root/git/9317-archlinux-aur
 git fetch origin 
+git fetch origin 
+git fetch origin 
+git fetch origin 
 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
