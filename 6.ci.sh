@@ -39,6 +39,7 @@ git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
 
 cd /root/git/9317-archlinux-aur/.git/
 cd refs
+cd remotes
 ls -al
 ls -al origin 
 ls -al upstream
