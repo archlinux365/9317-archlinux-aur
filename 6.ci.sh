@@ -21,14 +21,14 @@ mkdir -p /root/git
 cd /root/git
 git clone https://github.com/archlinux/aur.git 9317-archlinux-aur
 
-git clone git@github.com:archlinux365/9317-archlinux-aur.git
-
 cd /root/git/9317-archlinux-aur
+git fetch origin 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
 
 git remote add upstream  https://github.com/archlinux/aur.git
 git remote set-url upstream https://github.com/archlinux/aur.git
+
 
 cd /root/git/9317-archlinux-aur/.git/refs/remotes/origin
 
