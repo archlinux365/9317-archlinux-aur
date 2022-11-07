@@ -23,6 +23,7 @@ git clone https://github.com/archlinux/aur.git 9317-archlinux-aur
 
 cd /root/git/9317-archlinux-aur
 git fetch origin 
+
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
 
@@ -34,6 +35,7 @@ cd /root/git/9317-archlinux-aur/.git/refs/remotes/origin
 
 git config --global user.email "gnuhub@gmail.com"
 git config --global user.name "gnuhub"
+ls -1
 
 for pkg in `ls`
 do 
