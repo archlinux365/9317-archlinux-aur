@@ -23,7 +23,7 @@ git clone --depth=1 https://github.com/archlinux/aur.git 9317-archlinux-aur
 
 cd /root/git/9317-archlinux-aur
 git remote -v
-git fetch origin --all
+git fetch --all origin 
 
 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
