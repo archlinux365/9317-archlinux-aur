@@ -23,16 +23,20 @@ git clone https://github.com/archlinux/aur.git 9317-archlinux-aur
 
 cd /root/git/9317-archlinux-aur
 git remote -v
+git remote add origin  git@github.com:archlinux/aur.git
+git remote set-url origin git@github.com:archlinux/aur.git
+
+
+
 git fetch origin 
 git fetch origin 
 git fetch origin 
 git fetch origin 
+
 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
 
-git remote add upstream  https://github.com/archlinux/aur.git
-git remote set-url upstream https://github.com/archlinux/aur.git
 cd /root/git/9317-archlinux-aur/.git/
 cd refs
 ls -al
