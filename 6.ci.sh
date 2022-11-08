@@ -14,8 +14,10 @@ mkdit -p ~/9317/
 git clone --depth=1 https://github.com/archlinux/aur.git 9317-archlinux-aur
 
 cd ~/9317/9317-archlinux-aur
-git remote -v
+git branch -r | grep -v '\->' | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 git fetch --all
+git pull --all
+
 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
@@ -25,7 +27,6 @@ cd refs
 cd remotes
 ls -al
 ls -al origin 
-ls -al upstream
 cd ~/9317/9317-archlinux-aur/.git/refs/remotes/origin
 
 for pkg in `ls`
