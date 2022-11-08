@@ -9,8 +9,8 @@ export PROJECT_NAME="${CMD_PATH##*/}"
 cd $CMD_PATH
 
 cd ~/
-mkdit -p ~/9317/
-
+mkdir -p ~/9317/
+cd ~/9317/
 git clone --depth=1 https://github.com/archlinux/aur.git 9317-archlinux-aur
 
 cd ~/9317/9317-archlinux-aur
