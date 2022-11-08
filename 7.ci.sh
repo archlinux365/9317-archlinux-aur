@@ -8,25 +8,38 @@ export PROJECT_NAME="${CMD_PATH##*/}"
 
 cd $CMD_PATH
 
-cd ~/
-mkdit -p ~/9317/
+cp -fv known_hosts /root/.ssh/known_hosts
+ssh-keygen -f "/root/.ssh/known_hosts" -R "frs.sourceforge.net"
+ssh-keyscan "frs.sourceforge.net" >> /root/.ssh/known_hosts
 
+
+ssh-keygen -f "/root/.ssh/known_hosts" -R "github.com"
+ssh-keyscan "github.com" >> /root/.ssh/known_hosts
+cat /root/.ssh/known_hosts
+
+mkdir -p /root/git
+cd /root/git
 git clone --depth=1 https://github.com/archlinux/aur.git 9317-archlinux-aur
 
-cd ~/9317/9317-archlinux-aur
+cd /root/git/9317-archlinux-aur
 git remote -v
-git fetch --all
+git fetch --all origin 
+
 
 git remote add origin  git@github.com:archlinux365/9317-archlinux-aur.git
 git remote set-url origin git@github.com:archlinux365/9317-archlinux-aur.git
 
-cd ~/9317/9317-archlinux-aur/.git/
+cd /root/git/9317-archlinux-aur/.git/
 cd refs
 cd remotes
 ls -al
 ls -al origin 
 ls -al upstream
-cd ~/9317/9317-archlinux-aur/.git/refs/remotes/origin
+cd /root/git/9317-archlinux-aur/.git/refs/remotes/origin
+
+git config --global user.email "gnuhub@gmail.com"
+git config --global user.name "gnuhub"
+ls -1
 
 for pkg in `ls`
 do 
